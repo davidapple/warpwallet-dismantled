@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <title>Warpwallet Dismantled</title>
+  <meta charset="utf-8">
+
+  <script src="../bower_components/qrcode.js/qrcode.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="js/warpwallet.min.js"></script>
+  <script src="js/warpwallet-ui.min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Warpwallet Dismantled</h1>
+
+    <form>
+
+        <label for="passphrase">Passphrase</label>
+        <input id="passphrase">
+
+        <br>
+
+        <label for="salt">Optional: your email [<a class="what-salt" href="#what-salt">as a salt</a>]</label>
+        <input id="salt" class="form-control">
+
+        <br>
+
+        <div class="salt-confirm" style="display:none;">
+            <label>
+                <input type="checkbox" id="checkbox-salt-confirm"> Sanity check: I confirm <span class="salt-summary"></span>
+            </label>
+        </div>
+        <div class="salt-explanation" style="display:none;">
+            <p>
+                WarpWallet can use your email address as extra seed data to make your wallet stronger. If you're unsure, please
+                do it. If you want to know more, read how we "salt" in the footer of this page.
+                [<a class="what-salt" href="#what-salt">Ok</a>]
+            </p>
+        </div>
+
+        <button type="button" id="btn-submit" disabled="true">Please enter a passphrase</button>
+        <button type="button" id="btn-reset">Clear &amp; reset</button>
+
+        <div class="progress-form" style="display:none;">
+          <div class="bar" style="width:10%;">
+            <span class="progress-scrypt"></span>
+            <span class="progress-pbkdf2"></span>
+          </div>
+        </div>
+
+        <div class="output-form" style="display:none;">
+            <label for="public-address">Public bitcoin address</label>
+            <input id="public-address" readonly>
+            <label for="private-key">Private key(don't share)</label>
+            <input id="private-key" readonly class="form-control">
+            <h5>Public address QR Code</h5>
+            <div id="public-address-qr"></div>
+            <div class="col-private-key-qr">
+              <h5>Private key QR Code (Wallet Import Format)</h5>
+              <div id="private-key-qr"></div>
+            </div>
+        </div>
+
+    </form>
+
+</body>

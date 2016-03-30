@@ -1,0 +1,23 @@
+{
+  "name": "warpwallet-dismantled",
+  "authors": [
+    "David Apple <davidapple@protonmail.com>"
+  ],
+  "description": "Everything required for a warpwallet in any development environment.",
+  "main": "dist/js/warpwallet.min.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "qrcode.js": "qrcode-js#*",
+    "warpwallet": "https://github.com/keybase/warpwallet.git#^1.0.8"
+  }
+}
